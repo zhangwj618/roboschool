@@ -683,7 +683,7 @@ void opengl_init(const boost::shared_ptr<Household::World>& wref)
 		QOpenGLContext* glcx = QOpenGLContext::globalShareContext();
 		QSurfaceFormat fmt_req = cx->fmt;
 		QSurfaceFormat fmt_got = glcx->format();
-		int got_version = fmt_got.majorVersion()*1000 + fmt_got.majorVersion();
+		int got_version = fmt_got.majorVersion()*1000 + fmt_got.minorVersion();
 		bool ok_without_shadows = got_version >= 3003;
 		bool ok_all_features    = got_version >= 4001;
 		if (!ok_without_shadows) {
